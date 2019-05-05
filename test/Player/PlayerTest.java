@@ -27,7 +27,9 @@ public class PlayerTest {
         ((MockedDie) dice.get(1)).setFaceValue(4);
 
         Player farouche = new Player("Farouche", "koala", b, dice);
+
         farouche.takeTurn();
         assertEquals(farouche.getPiece().getLocation(), b.getSquare(10));
+
     }
 }
