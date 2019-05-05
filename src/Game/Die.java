@@ -10,7 +10,7 @@ public class Die {
     /**
      * Value initialized to 0 when the dice has not been rolled yet.
      */
-    private int faceValue = 0;
+    protected int faceValue = 0;
 
     /**
      * Constructor
@@ -32,4 +32,5 @@ public class Die {
     public int getFaceValue() {
         return faceValue;
     }
+
 }
