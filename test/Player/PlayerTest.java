@@ -1,8 +1,7 @@
 package Player;
 
 import Game.Board;
-import Game.Die;
-import Game.MockedDie;
+import Game.MockedCup;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -20,13 +19,9 @@ public class PlayerTest {
     @Test
     public void testTakeTurn() {
         Board b = new Board();
-        ArrayList<Die> dice = new ArrayList<>();
-        dice.add(new MockedDie());
-        dice.add(new MockedDie());
-        ((MockedDie) dice.get(0)).setFaceValue(6);
-        ((MockedDie) dice.get(1)).setFaceValue(4);
+        MockedCup cup = new MockedCup(6, 4);
 
-        Player farouche = new Player("Farouche", "koala", b, dice);
+        Player farouche = new Player("Farouche", "koala", b, cup);
 
         farouche.takeTurn();
         assertEquals(farouche.getPiece().getLocation(), b.getSquare(10));

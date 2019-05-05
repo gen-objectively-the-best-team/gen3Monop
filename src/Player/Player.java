@@ -12,7 +12,7 @@ public class Player {
     private String name;
     private Piece piece;
     private Board board;
-    private ArrayList<Die> dice;
+    private Cup cup;
     private int cash;
 
     /**
@@ -27,11 +27,11 @@ public class Player {
      * Player constructor
      * @param name Player name
      */
-    public Player(String name, String piece, Board board, ArrayList<Die> dice) {
+    public Player(String name, String piece, Board board, Cup cup) {
         this(name);
         this.piece = new Piece(piece, board.getSquare(0));
         this.board = board;
-        this.dice = dice;
+        this.cup = cup;
 
     }
     public void addCash(int cash) {
@@ -64,13 +64,11 @@ public class Player {
      * Sequence of actions of a player taking his turn
      */
     public void takeTurn() {
-        dice.get(0).roll();
-        dice.get(1).roll();
+        cup.roll();
 
         System.out.println("Player " + name +
-                " rolled die 1 for " + dice.get(0).getFaceValue()
-                + " and die 2 for " + dice.get(1).getFaceValue());
-        piece.setLocation(board.getSquare(piece.getLocation(), dice.get(0).getFaceValue() + dice.get(1).getFaceValue()));
+                " rolled the cup for " + cup.getTotal());
+        piece.setLocation(board.getSquare(piece.getLocation(), cup.getTotal()));
         System.out.println("Player " + name +
                 " landed on square " + piece.getLocation().getName());
 
