@@ -18,7 +18,7 @@ public class MonopolyGameTest {
 
     @Test
     public void gameIsNotInfinite(){
-        assertTimeout(Duration.ofSeconds(10), ()->{
+        assertTimeout(Duration.ofSeconds(10), () -> {
             MonopolyGame game = new MonopolyGame(3);
             game.playGame();
         });
