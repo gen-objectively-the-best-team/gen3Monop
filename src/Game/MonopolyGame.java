@@ -16,14 +16,12 @@ public class MonopolyGame {
         }
 
         roundCnt = 0;
-        dice = new ArrayList<>();
-        dice.add(new Die());
-        dice.add(new Die());
+        Cup cup = new Cup();
 
         board = new Board();
         players = new ArrayList<>();
         for( int i = 0;i < nbOfPlayers;i++){
-            players.add(new Player("player"+(i+1),"player"+(i+1), board, dice));
+            players.add(new Player("player"+(i+1),"player"+(i+1), board, cup));
         }
     }
 
