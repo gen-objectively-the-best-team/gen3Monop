@@ -55,4 +55,8 @@ public class Player {
         System.out.println("Player " + name +
                 " landed on square " + piece.getLocation().getName());
     }
+
+    public Piece getPiece(){
+        return piece;
+    }
 }
