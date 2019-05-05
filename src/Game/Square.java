@@ -1,11 +1,13 @@
 package Game;
 
+import Player.Player;
+
 /**
  * Class representing a Square on the game board
  * @author Guillaume Vetter & Luca Reis de Carvalho & Claude-André Alves
  *
  */
-public class Square {
+public abstract class Square {
     private String name;
 
     /**
@@ -23,4 +25,6 @@ public class Square {
     public String getName() {
         return name;
     }
+
+    public abstract void landedOn(Player p);
 }

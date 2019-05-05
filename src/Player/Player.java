@@ -80,4 +80,12 @@ public class Player {
     public Piece getPiece(){
         return piece;
     }
+
+    public int getNetWorth() {
+        return  cash;
+    }
+
+    public Piece getPiece(){
+        return piece;
+    }
 }

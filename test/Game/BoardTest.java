@@ -15,7 +15,7 @@ public class BoardTest {
     @Test
     void TheFirstSquareIsGo(){
         Square go= board.getSquare(0);
-        assertEquals("Go",go.getName());
+        assertEquals("GO",go.getName());
     }
 
 

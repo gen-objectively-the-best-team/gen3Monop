@@ -16,10 +16,15 @@ public class Board {
      */
     public Board() {
         squares=new ArrayList<Square>();
-        squares.add(new Square("Go"));
-        for(int i= 1;i<40;i++){
-            squares.add(new Square("Square "+i));
+
+        for(int i= 0;i<40;i++){
+            squares.add(new RegularSquare("Square "+i));
         }
+        squares.set(0,new GoSquare());
+        squares.set(4,new IncomeTaxSquare("Income Tax"));
+        squares.set(38,new IncomeTaxSquare("Luxury Tax"));
+
+        squares.set(30,new GoToJailSquare("Go To jail",squares.get(10)));
     }
 
     /**
